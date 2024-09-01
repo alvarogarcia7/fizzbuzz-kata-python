@@ -76,7 +76,8 @@ class TestConversion(unittest.TestCase):
             none = regex.match(converted) is not None
             assert none, f"[number={number}] Expected '{converted}' to match '{regex.pattern}'"
 
-    def convert_list(self, subset: list[int]) -> dict[int, str]:
+    @staticmethod
+    def convert_list(subset: list[int]) -> dict[int, str]:
         result: dict[int, str] = {number: FizzBuzz().convert(number) for number in subset}
         return result
 
