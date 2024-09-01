@@ -30,7 +30,7 @@ class TestConversion(unittest.TestCase):
 
     def test_convert_contains_five_but_not_multiples_of_five(self) -> None:
         subset: list[int] = [i for i in range(1, 1000) if '5' in str(i) and i % 5 != 0]
-        self.verify_all(self.convert_list(subset), re.compile(r'.*Buzz.*'))
+        self.verify_all(self.convert_list(subset), re.compile(r'^.*Buzz.*$'))
         approvaltests.verify_all("number to string: contains 5 but not multiple of 5",
                                  list(map(lambda x: str(x), subset)),
                                  lambda x: f"{x} => {FizzBuzz().convert(int(x))}")
