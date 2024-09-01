@@ -3,7 +3,7 @@ from fizzbuzz.conversion import FizzBuzz
 
 def main() -> int:
     fizzbuzz = FizzBuzz()
-    for i in range(1, 20 + 1):
+    for i in range(1, 100 + 1):
         print(fizzbuzz.convert(i))
     return 0
 
