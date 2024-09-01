@@ -2,7 +2,7 @@
 
 Using TDD and Approval Tests (Golden Master) to solve
 
-# Python Boilerplate
+# Running it
 
 ## Getting started - Local python
 
