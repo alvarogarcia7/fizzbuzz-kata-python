@@ -49,6 +49,18 @@ class TestConversion(unittest.TestCase):
                                  list(map(lambda x: str(x), subset)),
                                  lambda x: f"{x} => {FizzBuzz().convert(int(x))}")
 
+    def test_convert_contains_three_but_not_multiples_of_three_or_five(self) -> None:
+        subset: list[int] = [i for i in range(1, 1000) if '3' in str(i) and '5' not in str(i) \
+                             and not (i % 3 == 0 or i % 5 == 0)]
+        converted: dict[int, str] = {number: FizzBuzz().convert(number) for number in subset}
+        regex = re.compile(r'Fizz\d+')
+        for number, converted_ in converted.items():
+            assert regex.match(converted_) is not None, f"[{number}] Expected {converted_} to match {regex.pattern}"
+
+        approvaltests.verify_all("number to string: contains 3 but not (multiple of 3 or 5)",
+                                 list(map(lambda x: str(x), subset)),
+                                 lambda x: f"{x} => {FizzBuzz().convert(int(x))}")
+
     def test_convert_contains_three_and_five_and_multiples_of_three_and_five(self) -> None:
         subset: list[int] = [i for i in range(1, 1000) if '5' in str(i) and '3' in str(i) and i % 15 == 0]
         converted = [FizzBuzz().convert(x) for x in subset]
