@@ -17,7 +17,7 @@ class TestFizzBuzzMain(unittest.TestCase):
         # approvaltests.set_default_reporter(())
         pass
 
-    def x_test_top_level_execution(self) -> None:
+    def test_top_level_execution(self) -> None:
         approvaltests.verify(self.command_helper.invoke_command(
             self.command_helper.to_list("""\
 python3 ./main.py
