@@ -69,9 +69,12 @@ class TestConversion(unittest.TestCase):
                                  list(map(lambda x: str(x), subset)),
                                  lambda x: f"{x} => {FizzBuzz().convert(int(x))}")
 
-    def verify_all(self, conversion_table: dict[int, str], regex: re.Pattern[str]) -> None:
+    @staticmethod
+    def verify_all(conversion_table: dict[int, str], regex: re.Pattern[str]) -> None:
         for number, converted in conversion_table.items():
-            assert regex.match(converted) is not None, f"[{number}] Expected {converted} to match {regex.pattern}"
+            # Keep the variable in place. Otherwise, the assert message will not show the actual value. Intuition: regex.match cannot be represented as a string?
+            none = regex.match(converted) is not None
+            assert none, f"[number={number}] Expected '{converted}' to match '{regex.pattern}'"
 
     def convert_list(self, subset: list[int]) -> dict[int, str]:
         result: dict[int, str] = {number: FizzBuzz().convert(number) for number in subset}
