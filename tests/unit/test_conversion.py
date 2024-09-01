@@ -23,7 +23,7 @@ class TestConversion(unittest.TestCase):
 
     def test_convert_contains_three_but_not_multiples_of_three(self) -> None:
         subset: list[int] = [i for i in range(1, 1000) if '3' in str(i) and i % 3 != 0]
-        self.verify_all(self.convert_list(subset), re.compile(r'Fizz'))
+        self.verify_all(self.convert_list(subset), re.compile(r'^.*Fizz.*$'))
         approvaltests.verify_all("number to string: contains 3 but not multiple of 3",
                                  list(map(lambda x: str(x), subset)),
                                  lambda x: f"{x} => {FizzBuzz().convert(int(x))}")
