@@ -4,18 +4,8 @@ from typing import Any
 import approvaltests
 from approvaltests.reporters import ReportWithVSCodeMacOS
 
+from fizzbuzz.conversion import FizzBuzz
 from tests.approval_tests.command_helper import CommandHelper
-
-
-class FizzBuzz:
-    def convert(self, number: int) -> str:
-        if number % 15 == 0:
-            return "FizzBuzz"
-        if number % 3 == 0:
-            return "Fizz"
-        if number % 5 == 0:
-            return "Buzz"
-        return str(number)
 
 
 class TestFizzBuzzConversion(unittest.TestCase):
