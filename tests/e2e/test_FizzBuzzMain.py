@@ -1,9 +1,11 @@
 import unittest
 from typing import Any
 
-from tests.approval_tests.command_helper import CommandHelper
 import approvaltests
 from approvaltests.reporters import PythonNativeReporter
+
+from tests.approval_tests.command_helper import CommandHelper
+
 
 class TestFizzBuzzMain(unittest.TestCase):
     command_helper: CommandHelper
