@@ -1,0 +1,23 @@
+number to string: contains 3 and 5 but not (multiple of 3 or 5)
+
+53 => FizzBuzz53
+253 => FizzBuzz253
+352 => FizzBuzz352
+353 => FizzBuzz353
+356 => FizzBuzz356
+358 => FizzBuzz358
+359 => FizzBuzz359
+503 => FizzBuzz503
+523 => FizzBuzz523
+532 => FizzBuzz532
+533 => FizzBuzz533
+536 => FizzBuzz536
+538 => FizzBuzz538
+539 => FizzBuzz539
+553 => FizzBuzz553
+563 => FizzBuzz563
+583 => FizzBuzz583
+593 => FizzBuzz593
+653 => FizzBuzz653
+853 => FizzBuzz853
+953 => FizzBuzz953
