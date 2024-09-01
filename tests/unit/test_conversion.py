@@ -18,7 +18,7 @@ class TestConversion(unittest.TestCase):
         approvaltests.set_default_reporter(ReportWithVSCodeMacOS())
 
     def test_convert(self) -> None:
-        approvaltests.verify_all("number to string", list(map(lambda x: str(x), range(1, 101))),
+        approvaltests.verify_all("number to string", list(map(lambda x: str(x), range(1, 1000 + 1))),
                                  lambda x: f"{x} => {FizzBuzz().convert(int(x))}")
 
     def test_convert_contains_three_but_not_multiples_of_three(self) -> None:
