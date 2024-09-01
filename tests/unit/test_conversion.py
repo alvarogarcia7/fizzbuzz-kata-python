@@ -20,5 +20,6 @@ class TestConversion(unittest.TestCase):
         approvaltests.verify_all("number to string", list(map(lambda x: str(x), range(1, 101))),
                                  lambda x: f"{x} => {FizzBuzz().convert(int(x))}")
 
-        if __name__ == '__main__':
-            unittest.main()
+
+if __name__ == '__main__':
+    unittest.main()
