@@ -35,7 +35,7 @@ FizzBuzz
 32
 Fizz
 34
-Buzz
+FizzBuzzBuzz
 Fizz
 37
 38
@@ -53,7 +53,7 @@ Fizz
 Buzz
 Fizz
 52
-53
+FizzBuzz
 Fizz
 Buzz
 56
