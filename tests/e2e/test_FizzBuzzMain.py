@@ -14,10 +14,14 @@ class TestFizzBuzzMain(unittest.TestCase):
         cls.command_helper = CommandHelper()
 
     def setUp(self) -> None:
-        approvaltests.set_default_reporter(PythonNativeReporter())
+        # approvaltests.set_default_reporter(())
         pass
 
-    def test_(self) -> None:
+    def test_top_level_execution(self) -> None:
+        approvaltests.verify(self.command_helper.invoke_command(
+            self.command_helper.to_list("""\
+python3 ./main.py
+""")))
         self.assertEqual(True, True)
 
 
