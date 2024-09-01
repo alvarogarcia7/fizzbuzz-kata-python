@@ -1,0 +1,8 @@
+number to string: contains 3 and 5 and multiple of 15
+
+135 => FizzBuzzFizzBuzz
+315 => FizzBuzzFizzBuzz
+345 => FizzBuzzFizzBuzz
+375 => FizzBuzzFizzBuzz
+435 => FizzBuzzFizzBuzz
+735 => FizzBuzzFizzBuzz

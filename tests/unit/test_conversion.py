@@ -44,6 +44,14 @@ class TestConversion(unittest.TestCase):
                                  list(map(lambda x: str(x), subset)),
                                  lambda x: f"{x} => {FizzBuzz().convert(int(x))}")
 
+    def test_convert_contains_three_and_five_and_multiples_of_three_and_five(self) -> None:
+        subset: list[int] = [i for i in range(1, 1000) if '5' in str(i) and '3' in str(i) and i % 15 == 0]
+        converted = [FizzBuzz().convert(x) for x in subset]
+        assert all('FizzBuzzFizzBuzz' == x for x in converted)
+        approvaltests.verify_all("number to string: contains 3 and 5 and multiple of 15",
+                                 list(map(lambda x: str(x), subset)),
+                                 lambda x: f"{x} => {FizzBuzz().convert(int(x))}")
+
 
 if __name__ == '__main__':
     unittest.main()

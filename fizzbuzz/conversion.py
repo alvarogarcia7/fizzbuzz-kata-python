@@ -11,9 +11,9 @@ class FizzBuzz:
 
         if number % 15 == 0:
             result += "FizzBuzz"
-        if number % 3 == 0:
+        elif number % 3 == 0:
             result += "Fizz"
-        if number % 5 == 0:
+        elif number % 5 == 0:
             result += "Buzz"
         else:
             result += str(number)
