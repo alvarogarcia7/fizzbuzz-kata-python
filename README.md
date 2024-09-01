@@ -1,3 +1,7 @@
+# Fizz Buzz Kata - Python
+
+Using TDD and Approval Tests (Golden Master) to solve
+
 # Python Boilerplate
 
 ## Getting started - Local python
