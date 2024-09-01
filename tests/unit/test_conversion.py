@@ -56,7 +56,7 @@ class TestConversion(unittest.TestCase):
     def test_convert_contains_five_but_not_multiples_of_three_or_five(self) -> None:
         subset: list[int] = [i for i in range(1, 1000) if '3' not in str(i) and '5' in str(i) \
                              and not (i % 3 == 0 or i % 5 == 0)]
-        self.verify_all(self.convert_list(subset), re.compile(r'Buzz\d+'))
+        self.verify_all(self.convert_list(subset), re.compile(r'^.*Buzz\d+$'))
 
         approvaltests.verify_all("number to string: contains 3 but not (multiple of 3 or 5)",
                                  list(map(lambda x: str(x), subset)),
