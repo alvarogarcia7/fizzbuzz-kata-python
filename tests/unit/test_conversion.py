@@ -8,7 +8,7 @@ from fizzbuzz.conversion import FizzBuzz
 from tests.approval_tests.command_helper import CommandHelper
 
 
-class TestFizzBuzzConversion(unittest.TestCase):
+class TestConversion(unittest.TestCase):
     command_helper: CommandHelper
 
     @classmethod
