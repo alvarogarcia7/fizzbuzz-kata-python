@@ -1,5 +1,5 @@
 import unittest
-from typing import Any
+from typing import Any, List
 
 import approvaltests
 from approvaltests.reporters import ReportWithVSCodeMacOS
@@ -18,6 +18,14 @@ class TestConversion(unittest.TestCase):
 
     def test_convert(self) -> None:
         approvaltests.verify_all("number to string", list(map(lambda x: str(x), range(1, 101))),
+                                 lambda x: f"{x} => {FizzBuzz().convert(int(x))}")
+
+    def test_convert_contains_three_but_not_multiples_of_three(self) -> None:
+        subset: list[int] = [i for i in range(1, 1000) if '3' in str(i) and i % 3 != 0]
+        converted = [FizzBuzz().convert(x) for x in subset]
+        assert all('Fizz' in x for x in converted)
+        approvaltests.verify_all("number to string: contains 3 but not multiple of 3",
+                                 list(map(lambda x: str(x), subset)),
                                  lambda x: f"{x} => {FizzBuzz().convert(int(x))}")
 
 
